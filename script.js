@@ -66,7 +66,7 @@ function addHistoryEntry(historyText) {
 
         // Create a new paragraph with the task completion message
         const historyEntry = document.createElement("p");
-        historyEntry.className = "text-gray-600 mt-1"; // Apply any classes you want
+        historyEntry.className = "text-black-500 bg-[#F4F7FF] mb-4 p-2 rounded"; // Apply any classes you want
 
         // Set the text for the history entry
         historyEntry.innerText = `You have completed the task "${historyText}" at ${currentTime}`;
