@@ -1,185 +1,4 @@
-/*
-const completedBtns = document.getElementsByClassName("complete-btn");
 
-for (let i = 0; i < completedBtns.length; i++) {
-    const button = completedBtns[i];
-
-    button.addEventListener("click", function (event) {
-        console.log("clicked");
-        event.preventDefault();
-
-        // Reduce count logic
-        const reduceCount = document.getElementById("reduce-count");
-        if (reduceCount) {
-            let count = parseInt(reduceCount.innerText, 10) || 0;
-            if (count > 0) {
-                reduceCount.innerText = count - 1;
-                console.log("Reduced Count:", reduceCount.innerText);
-            }
-        } else {
-            console.warn("Element with ID 'reduce-count' not found.");
-        }
-
-        // Increase count logic
-        const increaseCount = document.getElementById("increase-count");
-        if (increaseCount) {
-            let count = parseInt(increaseCount.innerText, 10) || 0;
-            increaseCount.innerText = count + 1;
-            console.log("Increased Count:", increaseCount.innerText);
-        } else {
-            console.warn("Element with ID 'increase-count' not found.");
-        }
-
-        // Add history entry
-        addHistoryEntry();
-    });
-}
-
-// Function to add history inside #history-add
-function addHistoryEntry() {
-    const historyContainer = document.getElementById("history-add");
-    const historyTitles = document.querySelectorAll(".history-title"); // Select all elements with class .history-title
-
-    if (historyContainer && historyTitles.length > 0) {
-        historyTitles.forEach(title => {
-            // Create a new paragraph for each history-title element
-            const historyEntry = document.createElement("p");
-            historyEntry.className = "text-gray-600 mt-1"; // Apply Tailwind styles if needed
-            historyEntry.innerText = title.innerText; // Get text from each .history-title element
-
-            // Append to history container
-            historyContainer.appendChild(historyEntry);
-        });
-    } else {
-        console.warn("Element with ID 'history-add' or .history-title not found.");
-    }
-}
-
-
- */
-
-
-
-/*
-const completedBtns = document.getElementsByClassName("complete-btn");
-
-for (let i = 0; i < completedBtns.length; i++) {
-    const button = completedBtns[i];
-
-    button.addEventListener("click", function (event) {
-        console.log("clicked");
-        event.preventDefault();
-
-        // Reduce count logic
-        const reduceCount = document.getElementById("reduce-count");
-        if (reduceCount) {
-            let count = parseInt(reduceCount.innerText, 10) || 0;
-            if (count > 0) {
-                reduceCount.innerText = count - 1;
-                console.log("Reduced Count:", reduceCount.innerText);
-            }
-        } else {
-            console.warn("Element with ID 'reduce-count' not found.");
-        }
-
-        // Increase count logic
-        const increaseCount = document.getElementById("increase-count");
-        if (increaseCount) {
-            let count = parseInt(increaseCount.innerText, 10) || 0;
-            increaseCount.innerText = count + 1;
-            console.log("Increased Count:", increaseCount.innerText);
-        } else {
-            console.warn("Element with ID 'increase-count' not found.");
-        }
-
-        // Add history entry for the specific button clicked
-        addHistoryEntry(button);
-    });
-}
-
-// Function to add history inside #history-add
-function addHistoryEntry(button) {
-    const historyContainer = document.getElementById("history-add");
-
-    if (historyContainer) {
-        // Get specific history text related to the clicked button (you can change this to be dynamic)
-        const historyTitle =document.querySelector(".history-title");
-        const historyText = historyTitle ? `Button clicked: ${historyTitle.innerText}` : "Button clicked: No title found";
-
-        // Create a new paragraph with the history text
-        const historyEntry = document.createElement("p");
-        historyEntry.className = "text-gray-600 mt-1"; // Apply Tailwind styles if needed
-        historyEntry.innerText = historyText;
-
-        // Append to history container
-        historyContainer.appendChild(historyEntry);
-    } else {
-        console.warn("Element with ID 'history-add' not found.");
-    }
-}
-
- */
-
-
-/*
-
-const completedBtns = document.getElementsByClassName("complete-btn");
-
-for (let i = 0; i < completedBtns.length; i++) {
-    const button = completedBtns[i];
-
-    button.addEventListener("click", function (event) {
-        console.log("clicked");
-        event.preventDefault();
-
-        // Reduce count logic
-        const reduceCount = document.getElementById("reduce-count");
-        if (reduceCount) {
-            let count = parseInt(reduceCount.innerText, 10) || 0;
-            if (count > 0) {
-                reduceCount.innerText = count - 1;
-                console.log("Reduced Count:", reduceCount.innerText);
-            }
-        } else {
-            console.warn("Element with ID 'reduce-count' not found.");
-        }
-
-        // Increase count logic
-        const increaseCount = document.getElementById("increase-count");
-        if (increaseCount) {
-            let count = parseInt(increaseCount.innerText, 10) || 0;
-            increaseCount.innerText = count + 1;
-            console.log("Increased Count:", increaseCount.innerText);
-        } else {
-            console.warn("Element with ID 'increase-count' not found.");
-        }
-
-        // Get the specific history title from the clicked button's data attribute
-        const historyTitle = button.getAttribute("data-history-title") || "Default history title";
-
-        // Add history entry with dynamic history text
-        addHistoryEntry(historyTitle);
-    });
-}
-
-// Function to add history inside #history-add
-function addHistoryEntry(historyText) {
-    const historyContainer = document.getElementById("history-add");
-
-    if (historyContainer) {
-        // Create a new paragraph with the history text
-        const historyEntry = document.createElement("p");
-        historyEntry.className = "text-gray-600 mt-1"; // Apply Tailwind styles if needed
-        historyEntry.innerText = `Button clicked: ${historyText}`;
-
-        // Append to history container
-        historyContainer.appendChild(historyEntry);
-    } else {
-        console.warn("Element with ID 'history-add' not found.");
-    }
-}
-
-*/
 
 const completedBtns = document.getElementsByClassName("complete-btn");
 
@@ -191,6 +10,15 @@ for (let i = 0; i < completedBtns.length; i++) {
         event.preventDefault();
         // Show alert message
         alert("Board Updated Successfully");
+
+        // Count the remaining active buttons
+        const activeButtons = document.querySelectorAll(".complete-btn:not([disabled])");
+
+        // If it's the last active button, show an extra alert
+        if (activeButtons.length === 1) {
+            alert("Congrats!!! You have completed all current tasks");
+        }
+
 
         // Disable the button after clicking
         button.setAttribute("disabled", "");
@@ -311,14 +139,26 @@ document.getElementById("change-bg").addEventListener("click", changeBackgroundC
 
 //goto the blog.html
 document.getElementById("board-btn").addEventListener("click", function () {
+    console.log("omar")
     window.location.href = "./blog.html";
 });
+//
+// document.getElementById("back-desk").addEventListener("click", function () {
+//     console.log("omar");  // This will print "omar" in the console when clicked
+//     window.location.href = "./index.html"; // Navigate to index.html
+// });
 
-document.getElementById("back-desk").addEventListener("click", function () {
-    console.log("omar");  // This will print "omar" in the console when clicked
-    window.location.href = "./index.html"; // Navigate to index.html
+document.addEventListener("click", function () {
+    const backDeskButton = document.getElementById("back-desk");
+
+    if (backDeskButton) {
+        backDeskButton.addEventListener("click", function () {
+            alert("Back to Desk button clicked!");
+        });
+    } else {
+        console.error("Element with ID 'back-desk' not found!");
+    }
 });
-
 
 
 
