@@ -139,26 +139,19 @@ document.getElementById("change-bg").addEventListener("click", changeBackgroundC
 
 //goto the blog.html
 document.getElementById("board-btn").addEventListener("click", function () {
-    console.log("omar")
+
     window.location.href = "./blog.html";
 });
-//
-// document.getElementById("back-desk").addEventListener("click", function () {
-//     console.log("omar");  // This will print "omar" in the console when clicked
-//     window.location.href = "./index.html"; // Navigate to index.html
-// });
 
-document.addEventListener("click", function () {
-    const backDeskButton = document.getElementById("back-desk");
+document.getElementById("back-btn").addEventListener("click", function () {
+    console.log("omar");  // This will print "omar" in the console when clicked
 
-    if (backDeskButton) {
-        backDeskButton.addEventListener("click", function () {
-            alert("Back to Desk button clicked!");
-        });
-    } else {
-        console.error("Element with ID 'back-desk' not found!");
-    }
 });
+const blog = document.getElementsByClassName(".blog")
+blog.addEventListener("click", function (event) {
+    console.log("blog clicked!");
+})
+
 
 
 
