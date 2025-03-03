@@ -33,7 +33,7 @@
                 <!-- Left Side -->
                 <div class="flex items-center gap-x-2">
                     <div class="logo">
-                        <a href="index.html"><img src="./assets/logo.png" class="h-10"></a>
+                        <a href="index.html"><img src="./assets/logo.png"></a>
                     </div>
                     <div class="logo-text">
                         <h2 class="text-xl ">Dev<span class="text-blue-500 font-bold">Board</span></h2>
@@ -51,16 +51,16 @@
     </nav>
 </header>
 
-<div class=" container 2xl mx-auto px-4 py-10">
+<div class=" container 2xl mx-auto px-4 py-4">
     <h1 class="text-4xl font-bold text-center mb-8">Blogs</h1>
-    <div class="bg-white shadow-lg rounded-lg p-6">
-        <div class="mb-10">
+    <div class="shadow-lg rounded-lg p-4">
+        <div class="mb-10 bg-white ">
             <h2 class="text-2xl font-semibold mb-4">
                 Question 1: What are the different ways to select an element in the
                 DOM?
             </h2>
             <p class="text-gray-600 text-xl">
-                There are 5 ways in which you can select elements in a DOM using
+                Answer:There are 5 ways in which i can select elements in a DOM using
                 selectors.
                 <br />
                 1. getElementsByTagName();
@@ -74,47 +74,52 @@
                 5. querySelectorAll();
             </p>
         </div>
-        <div class="mb-10">
+        <div class="mb-10 bg-white">
             <h2 class="text-2xl font-semibold mb-4">
                 Question 2: What is the difference between innerHTML, innerText, and
                 textContent?
             </h2>
             <p class="text-gray-600 text-xl">
-                ১. innerHTML বর্ণনা: এই প্রপার্টি একটি উপাদানের মধ্যে থাকা HTML
-                মার্কআপকে পায় বা সেট করে। এটি HTML ট্যাগ অন্তর্ভুক্ত করতে পারে, যার
-                মানে আপনি এটি ব্যবহার করে একটি উপাদানে HTML কন্টেন্ট সন্নিবেশ করতে
-                পারেন। ব্যবহার: পাওয়া: HTML কন্টেন্টকে একটি স্ট্রিং হিসেবে ফেরত
-                দেয়। সেট করা: HTML কন্টেন্ট সেট করতে দেয়, যা ট্যাগ অন্তর্ভুক্ত
-                করতে পারে।<br>
-
+              Answer:<br>
+               <span class="text-red-300"> TextContents:</span> is all text contained by an element and all its children that are for formatting purposes only.<br>
+               <span class="text-red-300"> InnerText:</span> returns all text contained by an element and all its child elements.<br>
+                <span class="text-red-300"> InnerHtml:</span> returns all text, including html tags, that is contained by an element.
             </p>
         </div>
-        <div class="mb-10">
+        <div class="mb-10 bg-white">
             <h2 class="text-2xl font-semibold mb-4">
                 Question 3: What is event delegation in the DOM?
             </h2>
             <p class="text-gray-600 text-xl">
-                ইভেন্ট ডেলিগেশন হল একটি শক্তিশালী কৌশল যা জাভাস্ক্রিপ্টে ইভেন্টগুলি আরও কার্যকরভাবে পরিচালনা করতে ব্যবহৃত হয়। এর মাধ্যমে, আপনি একটি প্যারেন্ট উপাদানে একটি ইভেন্ট লিসেনার যুক্ত করেন, যা তার শিশু উপাদানগুলির ইভেন্টগুলির জন্য কাজ করে।
+              Answer:<br>
+                Event delegation in the DOM is a JavaScript technique where I attach a single event listener to a parent element, allowing it to handle events triggered on its child elements, instead of adding separate listeners to each child element; this leverages the "event bubbling" mechanism where events triggered on a child element propagate up to its ancestors in the DOM tree, making it efficient for handling events on large sets of dynamically added elements. 
+
             </p>
         </div>
-        <div class="mb-10">
+        <div class="mb-10 bg-white">
             <h2 class="text-2xl font-semibold mb-4">
                 Question 4: What is event bubbling in the DOM?
             </h2>
             <p class="text-gray-600 text-xl">
-                ইভেন্ট বুবলিং হল DOM-এর একটি মৌলিক ধারণা যা ইভেন্টগুলির প্রভাব কিভাবে উপাদানের হায়ারার্কিতে ছড়িয়ে পড়ে তা বর্ণনা করে। যখন একটি ইভেন্ট একটি নির্দিষ্ট উপাদানে ঘটে, তখন এটি প্রথমে সেই উপাদানে (লক্ষ্য) ট্রিগার হয় এবং তারপর এটি তার প্যারেন্ট উপাদানগুলির দিকে "বুবল" করে, প্যারেন্টগুলিতে সংযুক্ত যেকোনো ইভেন্ট লিসেনারকে ট্রিগার করে।
+              Answer:<br>
+                Event bubbling in the DOM is a process that propagates events up through the DOM tree, starting with the innermost element. This process is similar to ripples spreading out in a pond. 
+
+
             </p>
         </div>
-        <div class="mb-10">
+        <div class="mb-10 bg-white">
             <h2 class="text-2xl font-semibold mb-4">
                 Question 5: How do you create, add, and remove elements using
                 JavaScript?
             </h2>
             <p class="text-gray-600 text-xl">
-                জাভাস্ক্রিপ্ট ব্যবহার করে DOM-এ উপাদান তৈরি, যোগ এবং মুছে ফেলার প্রক্রিয়া নিচে সংক্ষেপে বর্ণনা করা হলো: <br>
-                নতুন উপাদান তৈরি করতে document.createElement() মেথড ব্যবহার করা হয়। <br>
-                তৈরি করা উপাদানটি DOM-এ যোগ করতে appendChild(), insertBefore(), বা append() মেথড ব্যবহার করা হয়। <br>
-                DOM থেকে উপাদান মুছে ফেলতে remove() বা parentNode.removeChild() মেথড ব্যবহার করা হয়।
+                Answer:<br>
+                Create elements:
+                To add an HTML element, I can use the <span class="text-red-300">document.createElement method</span> to create a new element. 
+                Adding elements:
+                After Creating append it to a parent element using <span class="text-red-300">appendChild.</span>
+                Removing elements:
+                To remove an HTML element, you can use the <span class="text-red-300">removeChild method</span> on its parent element.
             </p>
 
         </div>
